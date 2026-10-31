@@ -60,11 +60,11 @@ public class Q1Test {
                     "Expected Result : Traversal 1 - Inorder, Traversal 2 - Preorder, Traversal 3 - Postorder");
           System.out.println("  Actual Result : " + result);
           System.out.println();
-     } 
+     }
 
-     public static String verify(String traversal1, String traversal2, String traversal3){
+     public static String verify(String traversal1, String traversal2, String traversal3) {
           int[][] traversals = new int[3][];
-          String[] inputs = {traversal1, traversal2, traversal3};
+          String[] inputs = { traversal1, traversal2, traversal3 };
           try {
                for (int i = 0; i < inputs.length; i++) {
                     traversals[i] = parseTraversal(inputs[i]);
@@ -85,7 +85,7 @@ public class Q1Test {
                          continue;
                     }
                     int postorder = 3 - inorder - preorder;
-                    int[] next = {0};
+                    int[] next = { 0 };
                     Node root = buildTree(traversals[preorder], next,
                               Long.MIN_VALUE, Long.MAX_VALUE);
                     if (next[0] != traversals[preorder].length) {
